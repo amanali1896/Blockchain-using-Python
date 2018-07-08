@@ -28,7 +28,7 @@ class Blockchain: # Helps to create blocks
         #As hash is encoded we initialised it with single quotes
         #This is the genesis block
         
-    def create_block(self, proof, previous_hash):
+    def create_block(self, proof, previous_hash): #this is used to create a block and append it to blockchain
         block = {'index':len(self.chain)+1,
                  'timestamp':str(datetime.datetime.now()),
                  'proof': proof,'previous_hash':previous_hash}
