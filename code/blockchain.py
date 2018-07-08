@@ -31,8 +31,10 @@ class Blockchain: # Helps to create blocks
     def create_block(self, proof, previous_hash):
         block = {'index':len(self.chain)+1,
                  'timestamp':str(datetime.datetime.now()),
-                 'proof': proof, }
+                 'proof': proof,'previous_hash':previous_hash}
         # 'index':chain+1 since we are creating a new block
         # 'timestamp': string because it will give no issues while using JSON. 
         #  'proof': from proof of work function we pass proof as parameter
-        #  and that is what is equated to the key(proof)
+        # and that is what is equated to the key(proof)
+        self.chain.append(block) # add the blocks to the chain(list). 
+        return block # return the parameters of the dictionary as it can be used to mine further blocks
