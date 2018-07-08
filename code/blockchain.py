@@ -64,6 +64,6 @@ class Blockchain:  # Helps to create blocks
         encoded_block = json.dumps(block, sort_keys = True).encode() 
         #we have to use dumps since we have to convert it to Json format. 
         #We encode the block.
-        return hashlib.sha256(encoded_block).hexdigest()
+        return hashlib.sha256(encoded_block).hexdigest() #retuns hash in hexadecimal format 
 
 
