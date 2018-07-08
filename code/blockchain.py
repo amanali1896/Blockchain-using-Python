@@ -60,5 +60,10 @@ class Blockchain:  # Helps to create blocks
                                #til the target is met.
         return new_proof
 
+    def hash(self, block): #this function returns the cryptographic hash of the function
+        encoded_block = json.dumps(block, sort_keys = True).encode() 
+        #we have to use dumps since we have to convert it to Json format. 
+        #We encode the block.
+        return hashlib.sha256(encoded_block).hexdigest()
 
 
