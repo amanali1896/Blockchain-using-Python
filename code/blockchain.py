@@ -10,8 +10,9 @@ Created on Sat Jul  7 19:09:31 2018
 # Install Postman HTTP client: https://www.getpostman.com/ 
 
 #Importing libraries
-import datetime
-import hashlib
-import json
+import datetime #since each block will have its own time
+import hashlib #to hash the block
+import json #encode the blocks before hashing
+#Flask is used to create an object which will be the web-app 
+#jsonify is used to return the response of the requests
 from flask import Flask, jsonify 
-
