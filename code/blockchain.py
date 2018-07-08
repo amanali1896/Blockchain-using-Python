@@ -62,8 +62,12 @@ class Blockchain:  # Helps to create blocks
 
     def hash(self, block): #this function returns the cryptographic hash of the function
         encoded_block = json.dumps(block, sort_keys = True).encode() 
-        #we have to use dumps since we have to convert it to Json format. 
-        #We encode the block.
+        #JSON.dumps: we have to use dumps since we have to convert it to Json format. 
+        #'sort_keys': JSON may have several keys and in order to view them you might 
+        #want to have the keys sorted in ascending order so that 
+        #you can find the key you are looking easily for in the JSON file. 
+
+        #encode(): We encode the block.
         return hashlib.sha256(encoded_block).hexdigest() #retuns hash in hexadecimal format 
 
 
