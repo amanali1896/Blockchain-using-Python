@@ -19,12 +19,18 @@ from flask import Flask, jsonify
 
 # Part 1-building the blockchain class
 
-class Blockchain:
+class Blockchain: # Helps to create blocks 
     
     def __init__(self): # Constructor method
         self.chain = [] #empty list. supposed to contain the list of blocks
         self.create_block(proof = 1, previous_hash ='0')
-        #proof of work is initialised to 1(a number) and previous hash is initialised to 0.
-        #As hash is encoded we initialised it with single quotes.
+        #proof of work is initialised to 1 and previous hash is initialised to 0.  
+        #As hash is encoded we initialised it with single quotes
+        #This is the genesis block
         
-        
+    def create_block(self, proof, previous_hash):
+        block = {'index':len(self.chain)+1,
+                 'timestamp':str(datetime.datetime.now())}
+        # 'index':chain+1 since we are creating a new block
+        # 'timestamp': string because it will give no issues while using JSON. 
+        # 
