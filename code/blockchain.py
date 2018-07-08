@@ -69,5 +69,21 @@ class Blockchain:  # Helps to create blocks
 
         #encode(): We encode the block.
         return hashlib.sha256(encoded_block).hexdigest() #retuns hash in hexadecimal format 
+    def is_chain_valid(self, chain):
+        previous_block = chain[0] #initialise the block||genesis block
+        block_index = 1
+        while block_index<len(chain):
+            block = chain[block_index]
+            if block['previous_hash'] != self.hash(previous_block):
+                return False #if the hashes don't match, then it is not a valid chain
+            previous_proof = previous_block['proof']
+            proof = block['proof']
+            hash_operation = hashlib.sha256(str(proof ** 2 - previous_proof ** 2).encode()).hexdigest()
+            if hash_operation[:4]!='0000':
+                return False #fails if it doesn't meet the target kept by the problem
+            previous_block = block #points previous block to the current block
+            block_index +=1
+
+        return True #if it wasn't false til now then it is valid, and hence true
 
 
