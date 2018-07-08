@@ -38,3 +38,4 @@ class Blockchain: # Helps to create blocks
         # and that is what is equated to the key(proof)
         self.chain.append(block) # add the blocks to the chain(list). 
         return block # return the parameters of the dictionary as it can be used to mine further blocks
+    
