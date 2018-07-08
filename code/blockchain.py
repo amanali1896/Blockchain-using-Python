@@ -58,7 +58,7 @@ class Blockchain:  # Helps to create blocks
             else:
                 new_proof += 1 #increase the new_proof and try to recalculate the hash
                                #til the target is met.
-
+        return new_proof
 
 
 
