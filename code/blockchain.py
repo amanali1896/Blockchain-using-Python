@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 """
 Created on Sat Jul  7 19:09:31 2018
 
@@ -47,14 +46,18 @@ class Blockchain:  # Helps to create blocks
     def proof_of_work(self, previous_proof):
         new_proof = 1
 
-        # every nonce/proof of work must start with 1. It is then incremented to satisfy the target requirment
+        # every nonce/proof of work must start with 1. It is then incremented to satisfy the target requirement
         check_proof = False
         while check_proof is False:
             hash_operation = hashlib.sha256(str(new_proof ** 2 - previous_proof ** 2).encode()).hexdigest()
-            # we have '-' operation  because it is asymmetrical a-b!=b-a.
+            # we have '-' operation  because it is asymmetrical i.e a-b!=b-a.
             # we are squaring it just to increase the difficulty
             # encode() is added so that sha256 accepts the encoded format. It adds 'b' to the result of a-b
-            
+            if hash_operation[:4] == '0000:' # setting the target
+                check_proof = True #exit the loop
+            else:
+                new_proof += 1 #increase the new_proof and try to recalculate the hash
+                               #til the target is met.
 
 
 
