@@ -41,5 +41,19 @@ class Blockchain: # Helps to create blocks
     def get_previous_block(self):
         return self.chain[-1]
         #returns the last block in the chain. 
+     
+    def proof_of_work(self, previous_proof):
+        new_proof = 1 
+        #every nonce/proof of work must start with 1. It is then incremented to satisfy the target requirment
+        check_proof = False
+        while check_proof is False:
+            hash_operation = hashlib.sha256(str(new_proof**2-previous**2).encode()).hexdigest()
+            #we have '-' operation in it because it is asymmetrical a-b!=b-a.
+            #we are squaring it just to increase the difficulty
+            #encode() is added so that sha256 accepts the encoded format. It adds 'b' to the result of a-b
+            #
+        
+        
+        
         
     
