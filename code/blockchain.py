@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Created on Sat Jul  7 19:09:31 2018
 
@@ -53,7 +54,7 @@ class Blockchain:  # Helps to create blocks
             # we have '-' operation  because it is asymmetrical i.e a-b!=b-a.
             # we are squaring it just to increase the difficulty
             # encode() is added so that sha256 accepts the encoded format. It adds 'b' to the result of a-b
-            if hash_operation[:4] == '0000:' # setting the target
+            if hash_operation[:4] == '0000': # setting the target
                 check_proof = True #exit the loop
             else:
                 new_proof += 1 #increase the new_proof and try to recalculate the hash
