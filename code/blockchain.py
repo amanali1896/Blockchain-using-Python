@@ -16,3 +16,15 @@ import json #encode the blocks before hashing
 #Flask is used to create an object which will be the web-app 
 #jsonify is used to return the response of the requests
 from flask import Flask, jsonify 
+
+# Part 1-building the blockchain class
+
+class Blockchain:
+    
+    def __init__(self): # Constructor method
+        self.chain = [] #empty list. supposed to contain the list of blocks
+        self.create_block(proof = 1, previous_hash ='0')
+        #proof of work is initialised to 1(a number) and previous hash is initialised to 0.
+        #As hash is encoded we initialised it with single quotes.
+        
+        
