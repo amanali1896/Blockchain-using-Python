@@ -131,5 +131,6 @@ def is_valid():
         response = {'message':'The blockchain is valid.'}
     else:
         response = {'message':'There is an error.'}
+    return jsonify(response), 200
 #running the app
 app.run(host = '0.0.0.0', port = 5000 )
