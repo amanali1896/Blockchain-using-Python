@@ -7,9 +7,11 @@ Notes:
 How to run the blockchain:
 1) Run the python code.
 2) Open postman app, 
-    (i)To add a block: type http://127.0.0.1:5000/mine_block in the address bar (Please refer demo folder in the repository),
-    (ii)To get the blockchain: type http://127.0.0.1:5000/get_chain in the address bar (Please refer demo folder in the repository),
-    (iii)To check if the blockchain is valid: type http://127.0.0.1:5000/get_chain in the address bar (Please refer demo folder in the
-                                              repository)
+    (i)To add a block: type http://127.0.0.1:5000/mine_block in the address bar and press enter/click on send button
+    (Please refer demo folder in the repository),
+    (ii)To get the blockchain: type http://127.0.0.1:5000/get_chain in the address bar and press enter/click on send button
+    (Please refer demo folder in the repository),
+    (iii)To check if the blockchain is valid: type http://127.0.0.1:5000/get_chain in the address bar and press enter/click on send button
+    (Please refer demo folder in the repository)
                                               
 Aman Ali
