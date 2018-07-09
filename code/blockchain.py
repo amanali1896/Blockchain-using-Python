@@ -18,7 +18,7 @@ import json  # encode the blocks before hashing
 from flask import Flask, jsonify
 
 
-# Part 1-building the blockchain class
+# Part 1-defining the blockchain class
 class Blockchain:  # Helps to create blocks
 
     def __init__(self):  # Constructor method
@@ -87,3 +87,11 @@ class Blockchain:  # Helps to create blocks
         return True #if it wasn't false til now then it is valid, and hence true
 
 
+# Part2-Mining the blockchain class. 
+
+# creating the Web App
+app = Flask(__name__) # creating the app
+
+# mining the blockchain
+blockchain = Blockchain() #creating our first blockchain
+#mining a new block
