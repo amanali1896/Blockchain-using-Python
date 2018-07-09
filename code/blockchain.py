@@ -122,3 +122,7 @@ def get_chain():
                 'length':len(blockchain.chain)} #response has two keys chain and length
 
      return jsonify(response), 200
+
+
+#running the app
+app.run(host = '0.0.0.0', port = 5000 )
