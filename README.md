@@ -11,7 +11,7 @@ How to run the blockchain:
     (Please refer demo folder in the repository),
     (ii)To get the blockchain: type http://127.0.0.1:5000/get_chain in the address bar and press enter/click on send button
     (Please refer demo folder in the repository),
-    (iii)To check if the blockchain is valid: type http://127.0.0.1:5000/get_chain in the address bar and press enter/click on send button
+    (iii)To check if the blockchain is valid: type http://127.0.0.1:5000/is_valid in the address bar and press enter/click on send button
     (Please refer demo folder in the repository)
                                               
 Aman Ali
