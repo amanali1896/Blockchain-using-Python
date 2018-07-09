@@ -95,7 +95,8 @@ app = Flask(__name__) # creating the app
 # mining the blockchain
 blockchain = Blockchain() #creating our first blockchain
 #mining a new block
-@app.route('/mine_block',methods=['GET']) #Flask syntax, routing address and the type of method.
+@app.route('/mine_block',methods=['GET']) #Flask syntax,mine_block is the function that calls app, 
+                                          # routing address and the type of method.
 
 def mine_block():
     previous_block = blockchain.get_previous_block() #gets the last block of the chain
@@ -108,6 +109,16 @@ def mine_block():
                 'index':block['index'],
                 'timestamp': block['timestamp'],
                 'proof':block['proof'],
-                'previous_hash':block['previous_hash']}                                                         
+                'previous_hash':block['previous_hash']}  #respose is the message we type if the block is mined                                                       
 
     return jsonify(response), 200 #jsonify returns the response in json format, 200 is the 'OK' HTTP status code
+
+#getting the full blockchain
+
+@app.route('/get_chain',methods=['GET'])
+
+def get_chain():
+    response = {'chain':blockchain.chain,
+                'length':len(blockchain.chain)} #response has two keys chain and length
+
+     return jsonify(response), 200
