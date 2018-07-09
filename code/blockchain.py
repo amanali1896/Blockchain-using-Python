@@ -95,3 +95,9 @@ app = Flask(__name__) # creating the app
 # mining the blockchain
 blockchain = Blockchain() #creating our first blockchain
 #mining a new block
+@app.route('/mine_block',methods=['GET']) #Flask syntax, routing address and the type of method.
+
+def mine_block():
+    previous_block = blockchain.get_previous_block() #gets the last block of the chain
+    previous_proof = previous_block['proof']#gets the proof of work of the previous block
+    proof = blockchain.proof_of_work(previous_proof) #proof of new block is calculated based on the previous block's proof of work
