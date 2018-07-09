@@ -101,3 +101,13 @@ def mine_block():
     previous_block = blockchain.get_previous_block() #gets the last block of the chain
     previous_proof = previous_block['proof']#gets the proof of work of the previous block
     proof = blockchain.proof_of_work(previous_proof) #proof of new block is calculated based on the previous block's proof of work
+    previous_hash = blockchain.hash(previous_block) #calculates the hexadecimal hash
+    block = blockchain.create_block(proof,previous_hash) #new block is created based on the information that's given.
+                                                         #information is Proof of work and the hash of the previous block
+    response = {'message':'The block was sucessfully mined.',
+                'index':block['index'],
+                'timestamp': block['timestamp'],
+                'proof':block['proof'],
+                'previous_hash':block['previous_hash']}                                                         
+
+    return jsonify(response), 200 #jsonify returns the response in json format, 200 is the 'OK' HTTP status code
