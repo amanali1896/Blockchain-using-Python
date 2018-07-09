@@ -128,7 +128,7 @@ def get_chain():
 def is_valid():
     is_valid = blockchain.is_chain_valid(blockchain.chain)
     if is_valid:
-        response = {'message':'The blockchain is valid'.}
+        response = {'message':'The blockchain is valid.'}
     else:
         response = {'message':'There is an error.'}
 #running the app
